@@ -6,5 +6,14 @@
 
 tasks:
   - name: Install dependencies
-  - before: export DFXVM_INIT_YES=true && sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)" && source "$HOME/.local/share/dfx/env" && rustup target add wasm32-unknown-unknown
-    init: dfx new my_project --type rust --frontend vue -q && cd my_project && dfx start --background && npm install && dfx deploy 
+    init: |
+      export DFXVM_INIT_YES=true
+      export INSTALL_SCRIPT=$(curl -fsSL https://internetcomputer.org/install.sh)
+      sh -ci "$INSTALL_SCRIPT"
+      source "$HOME/.local/share/dfx/env"
+      rustup target add wasm32-unknown-unknown
+    command: |
+      dfx new my_project --type rust --frontend vue -q
+      cd my_project
+      dfx start --background
+      npm install && dfx deploy 
