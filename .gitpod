@@ -19,8 +19,8 @@ tasks:
       cd icp_workshops_frontend
       npm i vite@latest
       npm install tailwindcss @tailwindcss/vite
-      cd ../
-      cd ../
+      cd ..
+      cd ..
       dfx start --background
       npm install && dfx deploy
 
