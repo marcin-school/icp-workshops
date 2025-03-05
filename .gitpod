@@ -13,7 +13,14 @@ tasks:
       source "$HOME/.local/share/dfx/env"
       rustup target add wasm32-unknown-unknown
     command: |
-      dfx new my_project --type rust --frontend vue -q
-      cd my_project
+      dfx new icp_workshops --type rust --frontend react -q
+      cd icp_workshops
+      cd src
+      cd icp_workshops_frontend
+      npm i vite@latest
+      npm install tailwindcss @tailwindcss/vite
+      cd ../
+      cd ../
       dfx start --background
-      npm install && dfx deploy 
+      npm install && dfx deploy
+
