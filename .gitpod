@@ -13,7 +13,7 @@ tasks:
       source "$HOME/.local/share/dfx/env"
       rustup target add wasm32-unknown-unknown
     command: |
-      dfx new icp_workshops --type rust --frontend react -q
+      dfx new icp_workshops --type rust --frontend vue -q
       cd icp_workshops
       cd src
       cd icp_workshops_frontend
